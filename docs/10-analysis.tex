@@ -24,15 +24,19 @@
 %%
 %% Рекомендуемый объём аналитического раздела 25—30 страниц.
 
+\section*{Постановка задачи}
+
+
+
 
 \chapter{Аналитический раздел}
 
 \section{Исходные данные}
 
-Вариант 1. Математическая модель в самом общем квазилинейном виде:
+Вариант 3. Математическая модель с постоянными коэффициентами $k(x, z) \equiv k$:
 
 \begin{equation}
-	\frac{\partial}{\partial x} \left( k(u) \frac{\partial u}{\partial x} \right) + \frac{\partial}{\partial z} \left( k(u) \frac{\partial u}{\partial z} \right) + f(x, z) = 0.
+	\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial z^2} + \frac{f(x, z)}{k} = 0.
 \end{equation}
 
 На границах прямоугольной области $(0 < x < a, 0 < z < b)$.
@@ -44,13 +48,11 @@
 			ylabel={$z$},
 			every axis x label/.style={at={(current axis.right of origin)},anchor=west},
 			every axis y label/.style={at={(current axis.north west)},above=2mm},
-			axis x line=bottom,
-			axis y line=left,
+			axis lines=left,
 			xmin=0,
 			xmax=1.1,
 			ymin=0,
 			ymax=1.25,
-			ytick=\empty,
 			xtick={0, 1},
 			xticklabels={$0$, $a$},
 			ytick={1},
@@ -80,28 +82,18 @@
 
 \begin{equation}
 	\begin{dcases}
-	x = 0, & -k(u(0, z)) \frac{\partial u}{\partial x} = F_0, \\
-	x = a, & -k(u(a, z)) \frac{\partial u}{\partial x} = \alpha_2(u(a, z) - u_0), \\
-	z = 0, & -k(u(x, 0)) \frac{\partial u}{\partial z} = \alpha_3(u(x, 0) - u_0), \\
-	z = b, & -k(u(x, b)) \frac{\partial u}{\partial z} = \alpha_4(u(x, b) - u_0). \\
+		x = 0, & u(0, z) = u_0, \\
+		x = a, & u(a, z) = u_0, \\
+		z = 0, & u(x, 0) = u_0, \\
+		z = b, & u(x, b) = u_0. \\
 	\end{dcases}
 \end{equation}
 
 Значения коэффициентов задачи (все размерности согласованы).
 
-В квазилинейном уравнении $k(u) = a_1(b_1 + c_1u^{m_1})$, Вт/см К.
-
-\begin{equation}
-	a_1 = 0,0134 \quad b_1 = 1, \quad c_1 = 4,35 \cdot 10^{-4}, \quad m_1 = 1.
-\end{equation}
-
-Параметры $\alpha_i$ варьируются в диапазоне $0,05$—$1,0$ Вт/см$^2$ К, $(i = \overline{1,4})$.
-
 Геометрические размеры $a = b = 10$ см.
 
 $u_0 = 300$ К.
-
-Поток при $x = 0$, $F_0 = 30$ Вт/см$^2$.
 
 В качестве примера функции источников можно предложить распределение вида $f(x, z) = f_0 e^{\beta(x - a/2)^2(z - b/2)^2}$, параметры $f_0, \beta$ варьируются исходя из условия, чтобы максимум функции не превышал $3000$~K.
 

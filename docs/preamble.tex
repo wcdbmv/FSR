@@ -21,9 +21,9 @@
 %% Цвет шрифта должен быть чёрным, размер шрифта — не менее 12 пт.
 %% Рекомендуемый тип шрифта для основного текста отчёта — Times New Roman.
 
-\usepackage{paratype}
-\renewcommand{\rmdefault}{PTSerif-TLF}
-\renewcommand{\ttdefault}{PTMono-TLF}
+%\usepackage{paratype}
+%\renewcommand{\rmdefault}{PTSerif-TLF}
+%\renewcommand{\ttdefault}{PTMono-TLF}
 
 %% Полужирный шрифт применяют только для заголовков разделов и подразделов, заголовков структурных элементов.
 %% Использование курсива допускается для обозначения объектов (биология, геология, медицина, нанотехнологии, генная инженерия и др.) и написания терминов (например, in vivo, in vitro) и иных объектов и терминов на латыни.
@@ -210,6 +210,9 @@
 \captionsetup*[table]{labelformat=gosttable}
 \renewcommand{\thesubfigure}{\asbuk{subfigure}}
 
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+
 %%
 %% 6.5.1 Иллюстрации (чертежи, графики, схемы, компьютерные распечатки, диаграммы, фотоснимки) следует располагать в отчёте непосредственно после текста отчёта, где они упоминаются впервые, или на следующей странице (по возможности ближе к соответствующим частям текста отчёта).
 %% На все иллюстрации в отчёте должны быть даны ссылки.
@@ -348,6 +351,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{commath}
 \usepackage{icomma}
 \usepackage{mathtools}
 
